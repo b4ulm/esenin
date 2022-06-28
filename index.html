@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="wight=device-wight,inital-scale=1.0">
+	<title>ESENIN</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrite="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXge10g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+<div class="sod">
+	<div class="navigation">
+		<ul>
+			<li class="list active" data-color="#f53b57">
+				<a href="#">
+					<span class="icon"><i class="fa-solid fa-heart-crack"></i></span>
+					<span class="title">1</span>					
+				</a>
+			</li>
+
+			<li class="list" data-color="#3c40c6">
+				<a href="#">
+					<span class="icon"><i class="fa-solid fa-fire"></i></span>
+					<span class="title">2</span>			
+				</a>
+			</li>
+
+			<li class="list" data-color="#05c46b">
+				<a href="#">
+					<span class="icon"><i class="fa-solid fa-joint"></i></i></span>
+					<span class="title">3</span>
+				</a>
+			</li>
+
+			<li class="list" data-color="#0fbcf9">
+				<a href="#">
+					<span class="icon"><i class="fa-solid fa-champagne-glasses"></i></span>
+					<span class="title">4</span>
+				</a>
+			</li>
+
+			<li class="list" data-color="#ffa801">
+				<a href="#">
+					<span class="icon"><i class="fa-solid fa-book-bookmark"></i></span>
+					<span class="title">5</span>
+				</a>
+			</li>
+
+			<div class="indicator"></div>
+
+		</ul>
+	</div>
+	<div class="box">
+<h2>ИНТЕРЕСНЫЕ ФАКТЫ ПРО ЕСЕНИНА</h2>
+		<span class="textone">У Есенина с Маяковским была взаимная нелюбовь. Они не стеснялись в выражениях и открыто устраивали ссоры. “Вырос с версту ростом и думает, мы испугались” – возмущался Сергей Александрович (кстати, его рост был 168 см.) Несмотря на все выпады и переругивания, поэты уважали творчество друг друга.</span>
+		<span class="texttwo">Уговорить Есенина лечь в частную психоневрологическую клинику удалось только его третьей жене. Но, выписавшись через месяц, поэт снял со своих счетов все деньги и поехал в Ленинград, где и погиб при загадочных обстоятельствах. Убийство или самоубийство – споры до сих пор ведутся.</span>
+		<span class="texttfree">В последние годы жизни поэта в газетах то и дело появлялись изобличительные статьи о нём, где осуждались пьянство, драки и дебоширство Есенина. И действительно, русский классик стал фигурантом 4 уголовных дел о хулиганстве.</span>
+		<span class="textfore">сенин употреблял очень много алкоголя, особенно после второго развода. Советские чиновники были обеспокоены этим фактом. Дзержинский даже хотел отправить его в санаторий для лечения от пьянства. Но разыскать Есенина не смогли, потому что тот где-то пил.</span>
+		<span class="textfive">Есенин с детства не хотел быть обычным рабочим человеком, чем вызывал негодование у старшего поколения и непонимание у сверстников. Первые стихи он сочинил в 8 лет.</span>
+	</div>
+</div>
+<script>
+
+	let list = document.querySelectorAll('li');
+	for (let i=0; i<list.length; i++){
+		list[i].onmouseover = function(){
+			let j = 0;
+			while(j<list.length){
+				list[j++].className = 'list'
+			}
+			list[i].className='list active'
+		}
+	}
+
+//change body color
+list.forEach(elements => {
+	elements.addEventListener('mouseenter',function(event){
+		let bg = document.querySelector('.box');
+		let color = event.target.getAttribute('data-color');
+		bg.style.backgroundColor = color;
+		if(color== '#f53b57'){
+			text = document.querySelector('.textone');
+			text.classList.toggle('open');
+		}
+		if(color== '#3c40c6'){
+			text = document.querySelector('.texttwo');
+			text.classList.toggle('open');
+		}
+		if(color== '#05c46b'){
+			text = document.querySelector('.texttfree');
+			text.classList.toggle('open');
+		}
+		if(color== '#0fbcf9'){
+			text = document.querySelector('.textfore');
+			text.classList.toggle('open');
+		}
+		if(color== '#ffa801'){
+			text = document.querySelector('.textfive');
+			text.classList.toggle('open');
+		}
+	})
+})
+
+</script>
+
+</body>
+</html>
